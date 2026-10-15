@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - CS InfraTech</title>
+<link rel="stylesheet"
+href="..\static\contactus.css">
+</head>
+<body>
+
+<header>CS InfraTech</header>
+
+<nav>
+    <a href="homepage.html" onclick="showMessage('Home')">Home</a>
+    <a href="jobpage.html" onclick="showMessage('Jobs')">Jobs</a>
+    <a href="aboutus.html" onclick="showMessage('About Us')">About Us</a>
+    <a href="contactus.html" onclick="showMessage('Contact Us')">Contact Us</a>
+    <a href = "#" onclick = "Logoutuser()">Logout</a>
+</nav>
+
+<div class="content">
+    <h2>Contact Information</h2>
+    <p>We would love to hear from you! Feel free to reach out.</p>
+
+    <p><b>Email:</b> csinfratech@gmail.com</p>
+    <p><b>Phone:</b> +91 12345 67890</p>
+    <p><b>Address:</b> (Enter your office address here)</p>
+</div>
+<script>
+function showMessage(page) {
+    alert("You clicked " + page + " page");
+}
+function Logoutuser(){
+    let confirmLogout = confirm("Are you sure you want to exit");
+    if (confirmLogout){
+        localStorage.removeItem("user");
+        window.location.href = "loginpage.html"
+    }
+}
+</script>
+
+</body>
+</html>
