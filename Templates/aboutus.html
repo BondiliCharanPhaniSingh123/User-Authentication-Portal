@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - CS InfraTech</title>
+<link rel="stylesheet"
+href="..\static\aboutus.css">
+</head>
+<body>
+
+<header>CS InfraTech</header>
+
+<nav>
+    <a href="homepage.html" onclick="showMessage('Home')">Home</a>
+    <a href="jobpage.html" onclick="showMessage('Jobs')">Jobs</a>
+    <a href="aboutus.html" onclick="showMessage('About Us')">About Us</a>
+    <a href="contactus.html" onclick="showMessage('Contact Us')">Contact Us</a>
+    <a href = "#" onclick = "Logoutuser()">Logout</a>
+</nav>
+
+<div class="content">
+    <h2>About Our Company</h2>
+    <p>
+        CS InfraTech is a fast-growing software development and IT solutions company,
+        delivering innovative digital services.
+    </p>
+    <p>
+        We specialize in building web applications, mobile apps, and enterprise-level
+        software using modern technologies.
+    </p>
+
+    <h3>Our Focus Areas:</h3>
+    <ul>
+        <li>Web Development</li>
+        <li>Mobile App Development</li>
+        <li>Cloud Deployment</li>
+        <li>Custom Software Solutions</li>
+        <li>Support & Maintenance</li>
+    </ul>
+
+    <h3>Our Values:</h3>
+    <p>Innovation • Quality • Integrity • Customer Satisfaction</p>
+</div>
+<script>
+function showMessage(page) {
+    alert("You clicked " + page + " page");
+}
+function Logoutuser(){
+    let confirmLogout = confirm("Are you sure you want to exit");
+    if (confirmLogout){
+        localStorage.removeItem("user");
+        window.location.href = "loginpage.html"
+    }
+}
+</script>
+
+</body>
+</html>
