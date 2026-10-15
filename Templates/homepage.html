@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS InfraTech</title>
+<link rel="stylesheet"
+href="..\static\homepage.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to CS InfraTech</h1>
+</header>
+
+<nav>
+    <a href="homepage.html" onclick="showMessage('Home')">Home</a>
+    <a href="jobpage.html" onclick="showMessage('Jobs')">Jobs</a>
+    <a href="aboutus.html" onclick="showMessage('About Us')">About Us</a>
+    <a href="contactus.html" onclick="showMessage('Contact Us')">Contact Us</a>
+    <a href = "#" onclick = "Logoutuser()">Logout</a>
+</nav>
+
+
+<div class="container">
+    <h2>Our Services</h2>
+    <ul>
+        <li>Web & Mobile App Development</li>
+        <li>Software Solutions</li>
+        <li>Cloud Deployment</li>
+        <li>Support & Maintenance</li>
+    </ul>
+
+    <h2>Our Strengths</h2>
+    <ul>
+        <li>Skilled Team</li>
+        <li>Client Satisfaction</li>
+        <li>Secure & Scalable Software</li>
+    </ul>
+</div>
+<script>
+function showMessage(page) {
+    alert("You clicked " + page + " page");
+}
+function Logoutuser(){
+    let confirmLogout = confirm("Are you sure you want to exit");
+    if (confirmLogout){
+        localStorage.removeItem("user");
+        window.location.href = "loginpage.html"
+    }
+}
+</script>
+
+
+<footer>
+    @2025 CS InfraTech
+</footer>
+
+</body>
+</html>
