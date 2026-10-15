@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobs - CS InfraTech</title>
+
+  
+<link rel="stylesheet"
+href="..\static\jobpage.css">
+
+
+</head>
+<body>
+
+<header>CS InfraTech</header>
+
+<nav>
+    <a href="homepage.html" onclick="showMessage('Home')">Home</a>
+    <a href="jobpage.html" onclick="showMessage('Jobs')">Jobs</a>
+    <a href="aboutus.html" onclick="showMessage('About Us')">About Us</a>
+    <a href="contactus.html" onclick="showMessage('Contact Us')">Contact Us</a>
+    <a href = "#" onclick = "Logoutuser()">Logout</a>
+</nav>
+
+
+<div class="content">
+    <h2>Job Openings</h2>
+    <p>No Job Openings At This Time</p>
+</div>
+<script>
+function showMessage(page) {
+    alert("You clicked " + page + " page");
+}
+function Logoutuser(){
+    let confirmLogout = confirm("Are you sure you want to exit");
+    if (confirmLogout){
+        localStorage.removeItem("user");
+        window.location.href = "loginpage.html"
+    }
+}
+</script>
+
+</body>
+</html>
