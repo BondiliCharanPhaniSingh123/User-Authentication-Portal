@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS InfraTech - Login</title>
+
+    <link rel="stylesheet" href="../static/loginpage.css">
+</head>
+<body>
+
+    <header>
+        <h1>CS INFRATECH</h1>
+    </header>
+
+    <div class="container">
+        <h2>LOGIN HERE</h2>
+
+        <form id="loginForm">
+            <label for="username">USERNAME:</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="ENTER USERNAME"
+                autocomplete="off"
+                required
+            >
+
+            <br>
+
+            <label for="password">PASSWORD:</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="ENTER PASSWORD"
+                autocomplete="new-password"
+                required
+            >
+
+            <br>
+
+            <button type="submit">LOGIN</button>
+        </form>
+    </div>
+
+    <p>
+        Not Registered?
+        <a href="registerpage.html">Register Here</a>
+    </p>
+
+    <script>
+        // Keep the login fields empty when the page opens.
+        window.addEventListener("pageshow", function () {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        });
+
+        // Validate login details.
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+
+            const savedUser = localStorage.getItem("user");
+
+            if (!savedUser) {
+                alert("No registered user found. Please register first.");
+                return;
+            }
+
+            let user;
+
+            try {
+                user = JSON.parse(savedUser);
+            } catch (error) {
+                alert("Saved registration data is invalid. Please register again.");
+                return;
+            }
+
+            if (
+                username === user.username &&
+                password === user.password
+            ) {
+                alert("Login successful. Welcome, " + user.fullname + "!");
+                window.location.href = "homepage.html";
+            } else {
+                alert("Invalid username or password.");
+            }
+        });
+    </script>
+
+</body>
+</html>
+```
