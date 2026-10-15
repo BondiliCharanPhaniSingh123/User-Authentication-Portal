@@ -1,0 +1,42 @@
+body{
+        font-family: Arial;
+        margin:0;
+        background-color: white;
+    }
+    header{
+        background-color: lightblue;
+        padding:20px;
+        text-align:center;
+        font-size:30px;
+        font-weight:bold;
+    }
+    nav {
+        background-color: skyblue;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav a {
+        text-decoration: none;
+        padding: 10px 20px;
+        color: black;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    nav a:hover {
+        background-color: lightgreen;
+    }
+    .container {
+        width: 85%;
+        background-color: whitesmoke;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid lightgray;
+    }
+    .content{
+        text-align:center;
+        margin-top:40px;
+        font-size:20px;
+    }
