@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CS INFRATECH</title>
+
+    <link rel="stylesheet"
+          href="../static/registerpage.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to CS InfraTech</h1>
+    </header>
+
+    <div class="container">
+
+        <h2>REGISTER HERE</h2>
+
+        <label>FULLNAME :</label>
+        <input type="text"
+               id="fullname"
+               placeholder="ENTER FULLNAME"
+               required>
+        <br>
+
+        <label>PHONE NUMBER :</label>
+        <input type="tel"
+               id="phonenumber"
+               placeholder="00000 00000"
+               pattern="[0-9]{10}"
+               maxlength="10"
+               inputmode="numeric"
+               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)"
+               required>
+        <br>
+
+        <label>EMAIL :</label>
+        <input type="email"
+               id="email"
+               placeholder="ABC@gmail.com"
+               required>
+        <br>
+
+        <label>USERNAME :</label>
+        <input type="text"
+               id="username"
+               placeholder="ENTER USERNAME"
+               required>
+        <br>
+
+        <label>PASSWORD :</label>
+        <input type="password"
+               id="password"
+               placeholder="ENTER PASSWORD"
+               required>
+        <br>
+
+        <label>CONFIRM PASSWORD :</label>
+        <input type="password"
+               id="confirmpassword"
+               placeholder="CONFIRM PASSWORD"
+               required>
+        <br>
+
+    </div>
+
+    <button type="button" onclick="registerUser()">REGISTER</button>
+
+    <p>
+        If Already Registered
+        <a href="loginpage.html">Login Here</a>
+    </p>
+
+    <script>
+        function registerUser() {
+
+            const fullname = document.getElementById("fullname").value.trim();
+            const phonenumber = document.getElementById("phonenumber").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmpassword = document.getElementById("confirmpassword").value;
+
+            if (!fullname || !phonenumber || !email ||
+                !username || !password || !confirmpassword) {
+                alert("Please fill all the fields");
+                return;
+            }
+
+            if (!/^[0-9]{10}$/.test(phonenumber)) {
+                alert("Enter a valid 10-digit phone number");
+                return;
+            }
+
+            if (password !== confirmpassword) {
+                alert("Password does not match");
+                return;
+            }
+
+            // Check whether the email already exists
+            const savedUser = JSON.parse(localStorage.getItem("user"));
+
+            if (savedUser &&
+                savedUser.email.toLowerCase() === email.toLowerCase()) {
+                alert("Email already exists");
+                return;
+            }
+
+            const user = {
+                fullname: fullname,
+                phonenumber: phonenumber,
+                email: email,
+                username: username,
+                password: password
+            };
+
+            localStorage.setItem("user", JSON.stringify(user));
+
+            alert("Registered Successfully");
+
+            window.location.href = "loginpage.html";
+        }
+    </script>
+
+</body>
+</html>
+```
