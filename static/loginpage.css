@@ -1,0 +1,121 @@
+
+/* Page styling */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url("B.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: white;
+    padding: 15px;
+    margin: 0;
+}
+
+/* Login container */
+.container {
+    width: 350px;
+    max-width: 85%;
+    padding: 25px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Login heading */
+h2 {
+    text-align: center;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Input focus */
+input:focus {
+    outline: 2px solid blue;
+    border-color: blue;
+}
+
+/* Login button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Button hover */
+button:hover {
+    background-color: darkslategray;
+}
+
+/* Registration text */
+p {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Registration link */
+a {
+    color: yellow;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile screen */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+}
